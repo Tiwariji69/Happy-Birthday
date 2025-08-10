@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #ffb6c1, #ffe4e1);
+  color: #4b2c36;
+  overflow-x: hidden;
+}
+
+/* Floating Hearts */
+.hearts {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+.heart {
+  position: absolute;
+  color: rgba(255,105,180,0.6);
+  animation: floatUp 8s linear infinite;
+}
+@keyframes floatUp {
+  0% { transform: translateY(100vh) scale(0.8); opacity: 0.8; }
+  100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+}
+
+header {
+  text-align: center;
+  padding: 60px 20px;
+  animation: fadeIn 2s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+header h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5em;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 5px rgba(255, 192, 203, 0.6);
+}
+header p {
+  font-size: 1.3em;
+}
+
+section {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  margin-bottom: 30px;
+  animation: fadeUp 2s ease-in-out;
+  box-shadow: 0 4px 20px rgba(255,182,193,0.4);
+  position: relative;
+  z-index: 1;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5em;
+  color: #ff1493;
+}
+
+/* Memory cards */
+.memories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.memory {
+  background: #fff0f5;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transform: scale(0.9);
+  opacity: 0;
+  animation: popIn 1.2s forwards;
+  cursor: pointer;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+.memory:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 8px 25px rgba(255,105,180,0.5);
+}
+.memory img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: transform 0.5s ease;
+}
+.memory:hover img {
+  transform: scale(1.1);
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+@keyframes fadeUp {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+@keyframes popIn {
+  0% {opacity: 0; transform: scale(0.5);}
+  100% {opacity: 1; transform: scale(1);}
+}
